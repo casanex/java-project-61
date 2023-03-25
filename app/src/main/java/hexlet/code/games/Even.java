@@ -26,13 +26,13 @@ public class Even {
         String[][] questionAnswers = new String[answer_size][question_size];
         for (int i = 0; i < question_size; i++) {
             int random_number = a + (int) (Math.random() * b);
-            System.out.println("Question" + random_number);
+            System.out.println("Question: " + random_number);
             System.out.println("Your answer:");
             String answer = scanner.next();
             questionAnswers[place_for_question][i] = Integer.toString(random_number);
             questionAnswers[place_for_answer][i] = (isEven(random_number)) ? "yes" : "no";
              if (answer.equals(questionAnswers[place_for_answer][i])) {
-                 System.out.print("Correct!");
+                 System.out.println("Correct!");
                  roundCount++;
              } else {
                  System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + questionAnswers[place_for_answer][i] + "'");
