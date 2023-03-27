@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Utilits;
 import hexlet.code.Engine;
-import java.util.Scanner;
+
 
 public class Calc {
 public static int calcResult (int num1, int num2, String operation) {
