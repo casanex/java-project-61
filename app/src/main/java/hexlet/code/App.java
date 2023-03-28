@@ -11,6 +11,9 @@ public class App {
         System.out.println("Your choise: " + choise);
 
         switch(choise) {
+            case "1":
+                Greet.greet();
+                break;
             case "2":
                 Even.even();
                 break;
