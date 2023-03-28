@@ -11,7 +11,7 @@ static final int PROGRESSION_LENGTH = 10;
 
     }
         public static String[][] arrayGame() {
-        String[][] questionAnswers = new String[Engine.question_size][Engine.answer_size];
+        String[][] questionAnswers = new String[Engine.answer_size][Engine.question_size];
         for (int i = 0; i < Engine.question_size; i++) {
             int firstNumber = Utilits.getRandom();
             int step = (int) (Math.random() * PROGRESSION_LENGTH);
