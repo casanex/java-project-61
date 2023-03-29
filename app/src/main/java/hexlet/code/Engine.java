@@ -1,10 +1,10 @@
 package hexlet.code;
 import java.util.Scanner;
 public class Engine {
-    public static final int question_size = 3;
-    public static final int answer_size = 2;
-    public static final int place_for_question = 0;
-    public static final int place_for_answer = 1;
+    public static final int QUESTION_SIZE = 3;
+    public static final int ANSWER_SIZE = 2;
+    public static final int PLACE_FOR_QUESTION = 0;
+    public static final int PLACE_FOR_ANSWER = 1;
 
     public static void doLogic(String[][] questionsAnswers, String condition) {
         Scanner scanner = new Scanner(System.in);
@@ -16,23 +16,23 @@ public class Engine {
 
         int roundsCount = 0;
 
-        for (int i = 0; i < question_size; i++) {
-            System.out.println("Question: " + questionsAnswers[place_for_question][i]);
+        for (int i = 0; i < QUESTION_SIZE; i++) {
+            System.out.println("Question: " + questionsAnswers[PLACE_FOR_QUESTION][i]);
             System.out.print("Your answer: ");
             String answer = scanner.next();
 
-            if (answer.equals(questionsAnswers[place_for_answer][i])) {
+            if (answer.equals(questionsAnswers[PLACE_FOR_ANSWER][i])) {
                 System.out.println("Correct!");
                 roundsCount++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + questionsAnswers[place_for_answer][i] + "'.");
+                        + questionsAnswers[PLACE_FOR_ANSWER][i] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
         }
 
-        if (roundsCount == question_size) {
+        if (roundsCount == QUESTION_SIZE) {
             System.out.println("Congratulations, " + userName + "!");
         }
 
