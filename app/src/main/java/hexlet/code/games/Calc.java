@@ -13,7 +13,7 @@ public class Calc {
         };
     }
     public static void calc() {
-        String condition = "What is result of the expression?";
+        String condition = "What is the result of the expression?";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
 
         for (int i = 0; i < Engine.QUESTION_SIZE; i++) {
