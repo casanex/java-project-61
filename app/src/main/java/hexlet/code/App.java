@@ -8,6 +8,12 @@ import hexlet.code.games.Progressive;
 import java.util.Scanner;
 
 public class App {
+    static final String CHOICE_FOR_GREET = "1";
+    static final String CHOICE_FOR_EVEN = "2";
+    static final String CHOICE_FOR_CALC = "3";
+    static final String CHOICE_FOR_GCD = "4";
+    static final String CHOICE_FOR_PROG = "5";
+    static final String CHOICE_FOR_PRIME = "6";
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
@@ -22,13 +28,13 @@ public class App {
         System.out.println(" Your choise: " + choise);
 
         switch (choise) {
-            case "1" -> Greet.greet();
-            case "2" -> Even.even();
-            case "3" -> Calc.calc();
-            case "4" -> GCD.gcd();
-            case "5" -> Progressive.getArrayProgressive();
-            case "6" -> Prime.prime();
-            default -> scanner.close();
+            case CHOICE_FOR_GREET -> Greet.greet();
+            case CHOICE_FOR_EVEN -> Even.even();
+            case CHOICE_FOR_CALC -> Calc.calc();
+            case CHOICE_FOR_GCD -> GCD.gcd();
+            case CHOICE_FOR_PROG -> Progressive.getArrayProgressive();
+            case CHOICE_FOR_PRIME -> Prime.prime();
+            default -> System.out.println("No game " + choise + " found. Please try again");
         }
     }
 }

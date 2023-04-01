@@ -12,6 +12,11 @@ public class Calc {
             default -> num1 * num2;
         };
     }
+    public static String  getRandomOperation() {
+        String[] operations = {"+", "-", "*"};
+        int a = (int) (Math.random() * operations.length);
+        return operations[a];
+    }
     public static void calc() {
         String condition = "What is the result of the expression?";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
@@ -19,7 +24,7 @@ public class Calc {
         for (int i = 0; i < Engine.QUESTION_SIZE; i++) {
             int number1 = Utilits.getRandom();
             int number2 = Utilits.getRandom();
-            String operation = Utilits.getRandomOperation();
+            String operation = getRandomOperation();
 
             questionAnswers[Engine.PLACE_FOR_QUESTION][i] = number1 + " " + operation + " " + number2;
             questionAnswers[Engine.PLACE_FOR_ANSWER][i] = Integer.toString(calcResult(number1, number2, operation));
