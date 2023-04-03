@@ -9,7 +9,8 @@ public class Calc {
         return switch (operation) {
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
-            default -> num1 * num2;
+            case "*" -> num1 * num2;
+            default -> throw new RuntimeException("No operator" + operation);
         };
     }
     public static String  getRandomOperation() {
@@ -17,7 +18,7 @@ public class Calc {
         int a = (int) (Math.random() * operations.length);
         return operations[a];
     }
-    public static void calc() {
+    public static void startGame() {
         String condition = "What is the result of the expression?";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
 

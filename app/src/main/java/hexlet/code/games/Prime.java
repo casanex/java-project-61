@@ -17,7 +17,7 @@ public class Prime {
         return true;
     }
 
-    public static void prime() {
+    public static void startGame() {
         String condition = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
         for (int i = 0; i < Engine.QUESTION_SIZE; i++) {

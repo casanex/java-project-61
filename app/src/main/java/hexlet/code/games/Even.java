@@ -7,7 +7,7 @@ public class Even {
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
-    public static void even() {
+    public static void startGame() {
         String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
         for (int i = 0; i < Engine.QUESTION_SIZE; i++) {

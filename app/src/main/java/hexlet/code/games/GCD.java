@@ -14,7 +14,7 @@ public class GCD {
         return num1;
     }
 
-    public static void gcd() {
+    public static void startGame() {
         String condition = "Find the greatest common divisor of given numbers.";
         String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
         for (int i = 0; i < Engine.QUESTION_SIZE; i++) {

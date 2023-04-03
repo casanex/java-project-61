@@ -14,27 +14,24 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(condition);
 
-        int roundsCount = 0;
+
 
         for (int i = 0; i < QUESTION_SIZE; i++) {
             System.out.println("Question: " + questionsAnswers[PLACE_FOR_QUESTION][i]);
             System.out.print("Your answer: ");
             String answer = scanner.next();
 
-            if (answer.equals(questionsAnswers[PLACE_FOR_ANSWER][i])) {
-                System.out.println("Correct!");
-                roundsCount++;
-            } else {
+            if (!answer.equals(questionsAnswers[PLACE_FOR_ANSWER][i])) {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
                         + questionsAnswers[PLACE_FOR_ANSWER][i] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                break;
+                return;
             }
-        }
+            System.out.println("Correct!");
 
-        if (roundsCount == QUESTION_SIZE) {
-            System.out.println("Congratulations, " + userName + "!");
         }
+        System.out.println("Congratulations, " + userName);
+
 
         scanner.close();
     }

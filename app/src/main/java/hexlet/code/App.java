@@ -29,11 +29,11 @@ public class App {
 
         switch (choise) {
             case CHOICE_FOR_GREET -> Greet.greet();
-            case CHOICE_FOR_EVEN -> Even.even();
-            case CHOICE_FOR_CALC -> Calc.calc();
-            case CHOICE_FOR_GCD -> GCD.gcd();
-            case CHOICE_FOR_PROG -> Progressive.getArrayProgressive();
-            case CHOICE_FOR_PRIME -> Prime.prime();
+            case CHOICE_FOR_EVEN -> Even.startGame();
+            case CHOICE_FOR_CALC -> Calc.startGame();
+            case CHOICE_FOR_GCD -> GCD.startGame();
+            case CHOICE_FOR_PROG -> Progressive.startGame();
+            case CHOICE_FOR_PRIME -> Prime.startGame();
             default -> System.out.println("No game " + choise + " found. Please try again");
         }
     }

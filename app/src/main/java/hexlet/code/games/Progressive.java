@@ -5,7 +5,7 @@ import hexlet.code.Utilits;
 
 public class Progressive {
     static final int PROGRESSION_LENGTH = 10;
-    public static void getArrayProgressive() {
+    public static void startGame() {
         String condition = "What number is missing in the progression?";
         String[][] questionAnswers = arrayGame();
         Engine.doLogic(questionAnswers, condition);
