@@ -4,26 +4,39 @@ import hexlet.code.Engine;
 import hexlet.code.Utilits;
 
 public class GCD {
-
-    public static int gcdResult(int num1, int num2) {
-        while (num2 != 0) {
-            int tmp = num1 % num2;
-            num1 = num2;
-            num2 = tmp;
-        }
-        return num1;
-    }
+    public static final int MAX_RANDOM_NUMBER = 100;
+    public static final int MIN_RANDOM_NUMBER = 0;
+    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
 
     public static void startGame() {
-        String condition = "Find the greatest common divisor of given numbers.";
-        String[][] questionAnswers = new String[Engine.ANSWER_SIZE][Engine.QUESTION_SIZE];
-        for (int i = 0; i < Engine.QUESTION_SIZE; i++) {
-            int number1 = Utilits.getRandom();
-            int number2 = Utilits.getRandom();
+        var task = "Find the greatest common divisor of given numbers.";
 
-            questionAnswers[Engine.PLACE_FOR_QUESTION][i] = number1 + " " + number2;
-            questionAnswers[Engine.PLACE_FOR_ANSWER][i] = Integer.toString(gcdResult(number1, number2));
+        generateRoundData();
+        Engine.start(task, QUESTION_AND_ANSWER);
+    }
+
+    public static int getGCD(int firstNumber, int secondNumber) {
+        int dividend = Math.max(firstNumber, secondNumber);
+        int divider  = Math.min(firstNumber, secondNumber);
+
+        while (divider != 0) {
+            var temp = dividend % divider;
+
+            dividend = divider;
+            divider = temp;
         }
-        Engine.doLogic(questionAnswers, condition);
+        return dividend;
+    }
+
+    public static void generateRoundData() {
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            var firstNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            var secondNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            var question = firstNumber + " " + secondNumber;
+            var gcd = getGCD(firstNumber, secondNumber);
+            var correctAnswer = Integer.toString(gcd);
+
+            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
+        }
     }
 }
