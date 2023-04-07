@@ -14,8 +14,6 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(condition);
 
-
-
         for (int i = 0; i < QUESTION_SIZE; i++) {
             System.out.println("Question: " + questionsAnswers[PLACE_FOR_QUESTION][i]);
             System.out.print("Your answer: ");
@@ -36,3 +34,4 @@ public class Engine {
         scanner.close();
     }
 }
+
