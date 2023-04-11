@@ -9,13 +9,14 @@ public class Progressive {
     public static final int PROGRESSION_LENGTH = 10;
     public static final int STEP_MAX = 10;
     public static final int STEP_MIN = 1;
-    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
 
     public static void startGame() {
         var task = "What number is missing in the progression?";
-
-        generateRoundData();
-        Engine.start(task, QUESTION_AND_ANSWER);
+        var questions = new String[Engine.ROUNDS_COUNT][];
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questions[i] = generateRoundData();
+        }
+        Engine.start(task, questions);
     }
 
     public static String[] getProgression(int number, int step, int progressionLength) {
@@ -28,18 +29,14 @@ public class Progressive {
         return progression;
     }
 
-    public static void generateRoundData() {
-        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var firstNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            var step = Utilits.getRandom(STEP_MIN, STEP_MAX);
-            String[] progression = getProgression(firstNumber, step, PROGRESSION_LENGTH);
-            var hiddenNumberIndex = Utilits.getRandom(0, PROGRESSION_LENGTH - 1);
-            var correctAnswer = progression[hiddenNumberIndex];
-            progression[hiddenNumberIndex] = "..";
-            var question = String.join(" ", progression);
-
-            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
-        }
+    public static String[] generateRoundData() {
+        var firstNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        var step = Utilits.getRandom(STEP_MIN, STEP_MAX);
+        String[] progression = getProgression(firstNumber, step, PROGRESSION_LENGTH);
+        var hiddenNumberIndex = Utilits.getRandom(0, PROGRESSION_LENGTH - 1);
+        var correctAnswer = progression[hiddenNumberIndex];
+        progression[hiddenNumberIndex] = "..";
+        var question = String.join(" ", progression);
+        return new String[] {question, correctAnswer};
     }
 }
-

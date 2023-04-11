@@ -7,12 +7,15 @@ import hexlet.code.Engine;
 public class Calc {
     public static final int MAX_RANDOM_NUMBER = 100;
     public static final int MIN_RANDOM_NUMBER = 0;
-    private static final String[][] QUESTION_AND_ANSWER = new String[Engine.ROUNDS_COUNT][2];
+
 
     public static void startGame() {
         var task = "What is the result of the expression?";
-        generateRoundData();
-        Engine.start(task, QUESTION_AND_ANSWER);
+        var questions = new String[Engine.ROUNDS_COUNT][];
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questions[i] = generateRoundData();
+        }
+        Engine.start(task, questions);
     }
 
     public static char getRandomOperator() {
@@ -37,15 +40,14 @@ public class Calc {
         };
     }
 
-    public static void generateRoundData() {
-        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var firstNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            var secondNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            var operator = getRandomOperator();
-            var question = firstNumber + " " + operator + " " + secondNumber;
-            var correctAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));
+    public static String[] generateRoundData() {
 
-            QUESTION_AND_ANSWER[i] = new String[] {question, correctAnswer};
-        }
+        var firstNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        var secondNumber = Utilits.getRandom(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        var operator = getRandomOperator();
+        var question = firstNumber + " " + operator + " " + secondNumber;
+        var correctAnswer = Integer.toString(calculate(operator, firstNumber, secondNumber));
+
+        return new String[] {question, correctAnswer};
     }
 }
