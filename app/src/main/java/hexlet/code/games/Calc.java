@@ -11,7 +11,6 @@ public class Calc {
 
     public static void startGame() {
         var task = "What is the result of the expression?";
-
         generateRoundData();
         Engine.start(task, QUESTION_AND_ANSWER);
     }
@@ -19,13 +18,13 @@ public class Calc {
     public static char getRandomOperator() {
         final int max = 2;
         final int min = 0;
-        var randomNumber = (int) (Math.random() * ((max - min) + 1) + min);
+        var randomNumber = Utilits.getRandom(min, max);
 
         return switch (randomNumber) {
             case 0 -> '*';
             case 1 -> '+';
             case 2 -> '-';
-            default -> throw new Error("Incorrect operator");
+            default -> throw new RuntimeException("Incorrect operator");
         };
     }
 
@@ -34,7 +33,7 @@ public class Calc {
             case '*' -> firstNumber * secondNumber;
             case '+' -> firstNumber + secondNumber;
             case '-' -> firstNumber - secondNumber;
-            default -> throw new Error("Incorrect operator");
+            default -> throw new RuntimeException("Incorrect operator");
         };
     }
 

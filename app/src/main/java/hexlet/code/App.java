@@ -8,12 +8,12 @@ import hexlet.code.games.Progressive;
 import java.util.Scanner;
 
 public class App {
-    static final String CHOICE_FOR_GREET = "1";
-    static final String CHOICE_FOR_EVEN = "2";
-    static final String CHOICE_FOR_CALC = "3";
-    static final String CHOICE_FOR_GCD = "4";
-    static final String CHOICE_FOR_PROG = "5";
-    static final String CHOICE_FOR_PRIME = "6";
+    static private final String CHOICE_FOR_GREET = "1";
+    static private final String CHOICE_FOR_EVEN = "2";
+    static private final String CHOICE_FOR_CALC = "3";
+    static private final String CHOICE_FOR_GCD = "4";
+    static private final String CHOICE_FOR_PROG = "5";
+    static private final String CHOICE_FOR_PRIME = "6";
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
