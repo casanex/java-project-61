@@ -20,12 +20,12 @@ public class Prime {
         } else if (number == 2) {
             return true;
         }
-            for (var divider = number - 1; divider > 1; divider--) {
-                if (number % divider == 0) {
-                    return false;
-                }
+        for (var divider = number - 1; divider > 1; divider--) {
+            if (number % divider == 0) {
+                return false;
             }
-            return true;
+        }
+        return true;
 
     }
 

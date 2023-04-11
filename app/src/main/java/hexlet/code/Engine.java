@@ -28,7 +28,8 @@ public class Engine {
                 System.out.println(userAnswer +  " is wrong answer ;(. Correct answer was " + correctAnswer + "\n"
                         + "Let's try again, " + userName + "!");
                 return;
-            } System.out.println("Correct");
+            }
+            System.out.println("Correct");
 
         }
         System.out.println("Congratulations, " + userName + "!");
